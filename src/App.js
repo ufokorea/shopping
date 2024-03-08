@@ -1,23 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import ProductALL from './page/ProductALL';
+import Login from './page/Login';
+import ProductDetail from './page/ProductDetail';
+import NavBar from './page/NavBar';
+import { useEffect, useState } from 'react';
+import Privite from './page/Privite';
+
 
 function App() {
+  const [auth,setAuth]=useState(false);
+
+  useEffect(()=>{
+
+  },[auth])
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <NavBar auth={auth}  setAuth={setAuth}/>
+    <Routes>
+      <Route path="/" element={<ProductALL />} />
+      <Route path="/login" element={<Login setAuth={setAuth}/>} />
+      <Route path="product/:id" element={<Privite auth={auth}/>} />  
+      {/* <Route path="product/:id" element={<ProductDetail auth={auth}/>} />       */}
+    </Routes>
     </div>
   );
 }
