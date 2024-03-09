@@ -18,7 +18,7 @@ function App() {
   
   return (
     <div >
-      <NavBar auth={auth}  setAuth={setAuth}/>
+    <NavBar auth={auth} setAuth={setAuth}/>
     <Routes>
       <Route path="/" element={<ProductALL />} />
       <Route path="/login" element={<Login setAuth={setAuth}/>} />

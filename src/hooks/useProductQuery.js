@@ -5,7 +5,6 @@ import React from "react";
 const getProducts = (id) => {
     
     return id?axios.get(`http://localhost:3004/products/${id}`) : axios.get('http://localhost:3004/products')
-    // return axios.get('http://localhost:3004/products/1')    
 };
 
 export const useProductQuery =(id) =>{

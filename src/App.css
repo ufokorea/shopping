@@ -1,3 +1,6 @@
+body{
+  padding : 30px;
+}
 .item_display{
   display: flex;
   list-style: none;
@@ -7,11 +10,12 @@
   padding : 20px;
 }
 .main_image{
-  width:100px;
+  width:150px;
 }
 .list_area{
   display: flex;
   justify-content: center;
+  height: 80px;
 }
 .nav_top{
   display: flex;
@@ -23,7 +27,26 @@
 .nav_mid{
   display: flex;
   justify-content: center;
+  cursor: pointer;
 }
 .itemCol{
   display: flex;
+}
+
+.login_area:hover{
+  cursor: pointer;
+  }
+
+.search_area {
+  padding: 5px;
+  position: absolute;
+  right: 20px;
+}
+
+.searchIcon{
+  position: relative;
+  left : 25px;
+}
+.input_box {
+  padding-left: 30px;
 }

@@ -4,8 +4,7 @@ import ProductDetail from './ProductDetail';
 import { Navigate } from 'react-router-dom';
 
 function Privite({auth}) {
-    const navigate = useNavigate();
-
+    // const navigate = useNavigate();
   return auth? <ProductDetail/> : <Navigate to ="/login" />
 }
 

@@ -1,19 +1,28 @@
 import React from 'react'
 import ItemCard from '../component/ItemCard'
-import { useProductQuery } from '../hooks/useProductQuery'
+import { useSearchQuery } from '../hooks/useSearchQuery'
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useSearchParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const ProductALL = () => {
 
-    const {isLoading, data, isError, error} = useProductQuery();
+    const [query,setQuery] = useSearchParams();
+    let searchQuery=query.get('q');
+    
+    useEffect(()=>{
+
+    },[query])
+
+    const {isLoading, data, isError, error} = useSearchQuery(searchQuery);
     
     if (isLoading) {
         return <div>Loading...</div>; // 로딩 중임을 표시하는 UI
     }
     
     if (isError) {
-        return <div>Error: {error.message}</div>; // 에러 메시지를 표시하는 UI
+        return console(error.message); 
     }
 
 
