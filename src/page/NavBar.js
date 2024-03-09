@@ -21,6 +21,7 @@ const NavBar = ({auth,setAuth}) => {
     const getKeySearch =(event) => {
         if(event.key == "Enter" ) {
             navigate(`/?q=${event.target.value}`);
+            event.target.value = null;
         }
     }
 

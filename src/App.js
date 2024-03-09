@@ -10,6 +10,7 @@ import Privite from './page/Privite';
 
 
 function App() {
+  
   const [auth,setAuth]=useState(false);
 
   useEffect(()=>{

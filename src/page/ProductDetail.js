@@ -7,8 +7,6 @@ import { useNavigate } from 'react-router-dom';
 
 const ProductDetail = ({auth}) => {
 
-  const navigate = useNavigate();
-
   let {id}=useParams();
   const {isLoading, data, isError, error} = useProductQuery(id);
     

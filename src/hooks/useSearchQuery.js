@@ -3,7 +3,7 @@ import axios from "axios"
 import React from "react";
 
 const getProducts = (searchQuery) => {
-    //  console.log("search",searchQuery)    
+
     return searchQuery?axios.get(`http://localhost:3004/products?q=${searchQuery}`) : axios.get('http://localhost:3004/products')
 
 };

@@ -12,19 +12,16 @@ const ProductALL = () => {
     let searchQuery=query.get('q');
     
     useEffect(()=>{
-
     },[query])
 
     const {isLoading, data, isError, error} = useSearchQuery(searchQuery);
     
-    if (isLoading) {
-        return <div>Loading...</div>; // 로딩 중임을 표시하는 UI
-    }
-    
-    if (isError) {
-        return console(error.message); 
-    }
+    if (isLoading) { return <div>Loading...</div>; }
+    if (isError) { return console.log(error.message); }
 
+    if( data.length == 0) {
+        return <div><h5>자료가 없습니다.</h5></div>
+    }; 
 
   return (
     <div>
